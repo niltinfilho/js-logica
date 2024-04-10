@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NF | 02</title>
+  <style>
+    @font-face {
+      font-family: 'Old London';
+      font-weight: normal;
+      font-size: 16px;
+      src: url('fonts/OldLondon.ttf');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: linear-gradient(to left bottom, #2A2359, #812B8C);
+      background-repeat: no-repeat;
+      height: 100vh;
+      padding: 10px;
+    }
+    
+    header {
+      background-color: #BF247A;
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px #bf247964;
+      }
+
+    h1, h2 {
+      color: white;
+      text-align: center;
+      font-family: 'Old London';
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    .container {
+      background-color: #0000008d;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px;
+      border-radius: 15px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    input {
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      font-size: 14px;
+      width: 60%;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      outline: none;
+      width: 50%;
+      background-color: #2A2359;
+      color: white;
+      border-radius: 10px;
+      transition: background .2s;
+    }
+    
+    button:hover {
+      background-color: #3F7C85;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Exercício #02</h1>
+    <h2>Aluno Nilton Filho</h2>
+  </header>
+
+  <main>
+    <div class="container">
+      <p>Leia valores A e B. Trocar os valores entre as duas variáveis, a variável A passa a possuir o valor da variável B e a variável B passa a possuir o valor da variável A.</p>
+      <input type="text" id="num-a" placeholder="Digite o valor A">
+      <input type="text" id="num-b" placeholder="Digite o valor B">
+      <button onclick="go()">Enviar</button>
+    </div>
+  </main>
+
+  <script>
+    function go() {
+      var a = document.getElementById('num-a').value;
+      var b = document.getElementById('num-b').value;
+
+      console.log('Variável A: ' + a)
+      console.log('Variável B: ' + b)
+      
+      var c = b; // C recebe B - B fica "vazio"
+      var b = a; // B recebe A
+      var a = c; // A recebe C - C guardou o valor de B
+
+      console.log('Variável A: ' + a)
+      console.log('Variável B: ' + b)
+    }
+  </script>
+</body>
+</html>
